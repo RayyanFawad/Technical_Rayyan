@@ -1,0 +1,514 @@
+/* ============================= Global Reset ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background: url("be.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #e6e6e6;
+  overflow-x: hidden;
+  line-height: 1.6;
+  cursor: default; /* Simple cursor */
+}
+
+/* ============================= Navbar ============================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00e0ff, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #00e0ff;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, #00e0ff, #007bff);
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ============================= Hero Section (Home Background) ============================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  background: url("be.jpg") no-repeat center center/cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 17, 23, 0.75);
+}
+
+.hero * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Title */
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #0040ff, #007bff, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.6);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* Hero Paragraph */
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: #cfd9e6;
+  max-width: 650px;
+  margin: 0 auto 20px auto;
+  line-height: 1.6;
+  animation: fadeInUp 2s ease-out;
+}
+
+/* Typing Text Style */
+#typing-text {
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #007bff;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #0040ff, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================= Sections ============================= */
+section {
+  padding: 80px 10%;
+  text-align: center;
+  background: rgba(13, 17, 23, 0.85);
+}
+
+section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00e0ff, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section p {
+  font-size: 1.05rem;
+  color: #c9d1d9;
+}
+
+/* ============================= Feature & Service Cards ============================= */
+.feature-grid,
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.feature-card,
+.service-card {
+  background: rgba(22, 27, 34, 0.9);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover,
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.2);
+}
+
+.feature-card h3,
+.service-card h3 {
+  font-size: 1.4rem;
+  background: linear-gradient(90deg, #00e0ff, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.feature-card p,
+.service-card p {
+  color: cyan;
+}
+
+/* ============================= Interactive Buttons ============================= */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #0040ff, #007bff);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.6);
+}
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(0, 123, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+}
+
+.btn:active::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+  transition: 0s;
+}
+
+/* ============================= Footer ============================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+  background: rgba(13, 17, 23, 0.85);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #8b949e;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+/* ============================= Animations ============================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================= Responsive Design ============================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .hero h1,
+  #typing-text {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 60px 6%;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  .feature-card,
+  .service-card {
+    padding: 20px;
+  }
+}
+
+/* ============================= Contact Page Styles ============================= */
+.contact-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0d1117, #161b22, #0a192f);
+}
+
+.contact-container {
+  background: rgba(22, 27, 34, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border-radius: 18px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  text-align: center;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.contact-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #00e0ff, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-subtext {
+  color: #adb5bd;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.contact-form .input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00e0ff;
+  box-shadow: 0 0 8px rgba(0,224,255,0.3);
+}
+
+.contact-form label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus + label,
+.contact-form input:not(:placeholder-shown) + label,
+.contact-form textarea:focus + label,
+.contact-form textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 8px;
+  font-size: 0.8rem;
+  color: #00e0ff;
+  background: #161b22;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #00e0ff, #007bff);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.contact-form .btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
+}
+
+#responseMsg {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #00e0ff;
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 30px 20px;
+  }
+
+  .contact-container h2 {
+    font-size: 1.8rem;
+  }
+}
+
+.services {
+  background: rgba(0, 31, 63, 0.85);
+}
+
+/* Make all normal text cyan but keep headings as they are */
+body p,
+.feature-card p,
+.service-card p,
+.hero-sub {
+  color: cyan;
+}
+
+.hero-logo {
+  width: 550px;
+  height: auto;
+  max-width: 20vw;
+  object-fit: contain;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-logo {
+    width: 330px;
+    max-width: 330px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo {
+    width: 344px;
+    max-width: 344px;
+  }
+}
+/* ============================= Hamburger Menu ============================= */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: cyan;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(13, 17, 23, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    width: 220px;
+    text-align: right;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .nav-links li {
+    margin: 12px 0;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+}
+.service-card:hover {
+  transform: translateY(-10px) rotateY(5deg);
+  box-shadow: 0 10px 30px rgba(0, 224, 255, 0.5);
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - TechnicalRayyan</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Contact Links Design */
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #00e0ff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      border: 1px solid #00e0ff;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-links a:hover {
+      background: #00e0ff;
+      color: #0d1117;
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px #00e0ff;
+    }
+
+    .contact-links a svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">⚡ TechnicalRayyan</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="shop.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section" style="background: url('be.jpg') no-repeat center center/cover;">
+    <div class="contact-container">
+      <h2>💬 Get In Touch</h2>
+      <p class="contact-subtext">Have a project in mind? Let’s build something futuristic together.</p>
+      <form id="contactForm" class="contact-form">
+        <div class="input-group">
+          <input type="text" name="name" required>
+          <label>Your Name</label>
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" required>
+          <label>Your Email</label>
+        </div>
+        <div class="input-group">
+          <textarea name="message" rows="5" required></textarea>
+          <label>Your Message</label>
+        </div>
+        <button type="submit" class="btn">🚀 Send Message</button>
+        <p id="responseMsg"></p>
+      </form>
+
+      <!-- Contact Links -->
+      <div class="contact-links">
+        <a href="mailto:rayyanfawad78@gmail.com" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 13.065L0 4V20h24V4l-12 9.065zM12 11l12-9H0l12 9z"/>
+          </svg>
+          rayyanfawad78@gmail.com
+        </a>
+        <a href="https://www.instagram.com/mal1k_rayyan" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.5-3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+          </svg>
+          mal1k_rayyan
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 TechnicalRayyan | Built with passion & futuristic design</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
